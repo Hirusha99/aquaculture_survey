@@ -16,7 +16,7 @@ st.set_page_config(
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv('D:/Research/madhavii/implementation/survey data.csv')
+    df = pd.read_csv('data/survey data.csv')
     # Clean DENSITY column
     df['DENSITY 1 (total stock/Ha)'] = df['DENSITY 1 (total stock/Ha)'].replace('#REF!', np.nan)
     df['DENSITY 1 (total stock/Ha)'] = pd.to_numeric(df['DENSITY 1 (total stock/Ha)'])
