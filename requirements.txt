@@ -3,3 +3,8 @@ pandas
 numpy
 plotly
 statsmodels
+scikit-learn
+flask
+flask-cors
+matplotlib
+seaborn
