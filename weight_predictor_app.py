@@ -9,7 +9,7 @@ from datetime import datetime
 
 # Page configuration
 st.set_page_config(
-    page_title="Fish Weight Predictor",
+    page_title="Sea Cucumber Weight Predictor",
     page_icon="🐟",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -136,8 +136,8 @@ def load_model():
 model, scaler, feature_names, model_status = load_model()
 
 # Header
-st.markdown('<div class="main-header">🐟 Fish Weight Predictor</div>', unsafe_allow_html=True)
-st.markdown('<div class="sub-header">Predict final fish weight using ML-powered analysis</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header">🐟 Sea Cucumber Weight Predictor</div>', unsafe_allow_html=True)
+st.markdown('<div class="sub-header">Predict final sea cucumber weight using ML-powered analysis</div>', unsafe_allow_html=True)
 
 # Sidebar - Model Info
 with st.sidebar:
@@ -148,7 +148,7 @@ with st.sidebar:
 
     st.header("📊 About This App")
     st.markdown("""
-    This application uses a **Linear Regression** model to predict fish final weight based on:
+    This application uses a **Linear Regression** model to predict sea cucumber final weight based on:
 
     - Farm characteristics
     - Stocking parameters
@@ -180,7 +180,7 @@ with col1:
     st.header("📝 Enter Farm Parameters")
 
     # Create tabs for organized input
-    tab1, tab2, tab3, tab4 = st.tabs(["🏞️ Farm Info", "🐟 Fish Info", "📈 Production", "🌍 Environment"])
+    tab1, tab2, tab3, tab4 = st.tabs(["🏞️ Farm Info", "🐟 Sea Cucumber Info", "📈 Production", "🌍 Environment"])
 
     with tab1:
         st.subheader("Farm Characteristics")
@@ -196,7 +196,7 @@ with col1:
             pens = st.number_input(
                 "Number of Pens", 
                 min_value=1, max_value=10, value=2, step=1,
-                help="Number of fish pens/cages"
+                help="Number of sea cucumber pens/cages"
             )
 
         with col_b:
@@ -213,27 +213,27 @@ with col1:
             )
 
     with tab2:
-        st.subheader("Fish Parameters")
+        st.subheader("Sea cucumber Parameters")
         col_a, col_b = st.columns(2)
 
         with col_a:
             initial_weight = st.number_input(
                 "Initial Weight (kg)", 
                 min_value=0.01, max_value=1.0, value=0.10, step=0.01, format="%.3f",
-                help="Average initial fish weight"
+                help="Average initial sea cucumber weight"
             )
 
             density = st.number_input(
-                "Stocking Density (fish/Ha)", 
+                "Stocking Density (sea cucumber/Ha)", 
                 min_value=1000, max_value=100000, value=10000, step=1000,
-                help="Number of fish per hectare"
+                help="Number of sea cucumber per hectare"
             )
 
         with col_b:
             harvest_no = st.number_input(
-                "Number of Fish to Harvest", 
+                "Number of sea cucumber to Harvest", 
                 min_value=100, max_value=100000, value=8000, step=500,
-                help="Expected number of fish at harvest"
+                help="Expected number of sea cucumber at harvest"
             )
 
     with tab3:
@@ -279,7 +279,7 @@ with col2:
     total_fish = int(density * area)
     expected_avg_weight = production / harvest_no if harvest_no > 0 else 0
 
-    st.metric("Total Fish Stocked", f"{total_fish:,}")
+    st.metric("Total sea cucumber Stocked", f"{total_fish:,}")
     st.metric("Expected Harvest", f"{harvest_no:,}")
     st.metric("Survival Rate", f"{(harvest_no/total_fish*100):.1f}%" if total_fish > 0 else "N/A")
     st.metric("Production Target", f"{production:,.0f} kg")
@@ -291,7 +291,7 @@ st.header("🔮 Make Prediction")
 col1, col2, col3 = st.columns([1, 1, 1])
 
 with col2:
-    predict_button = st.button("🎯 Predict Fish Weight", use_container_width=True)
+    predict_button = st.button("🎯 Predict sea cucumber Weight", use_container_width=True)
 
 if predict_button:
     # Prepare input data
@@ -319,7 +319,7 @@ if predict_button:
     # Display prediction
     st.markdown(f"""
     <div class="prediction-box">
-        <h2>🎉 Predicted Fish Weight</h2>
+        <h2>Predicted cucumber Weight</h2>
         <div class="prediction-value">{prediction:.3f} kg</div>
         <p style="font-size: 1.2rem;">{prediction*1000:.0f} grams</p>
     </div>
@@ -367,7 +367,7 @@ if predict_button:
         st.write(f"• Initial Weight: {initial_weight:.3f} kg")
         st.write(f"• Final Weight: {prediction:.3f} kg")
         st.write(f"• Cycle Duration: {duration:.1f} months")
-        st.write(f"• Fish Count: {harvest_no:,}")
+        st.write(f"• Sea Cucumber Count: {harvest_no:,}")
         st.write(f"• Farm Area: {area:.1f} ha")
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -377,7 +377,7 @@ if predict_button:
         st.write(f"• Total Production: {production:,.0f} kg")
         st.write(f"• Production/Ha: {production_ha:,.0f} kg/ha")
         st.write(f"• Predicted Total: {(prediction * harvest_no):,.0f} kg")
-        st.write(f"• Stocking Density: {density:,} fish/ha")
+        st.write(f"• Stocking Density: {density:,} SC/ha")
         st.markdown('</div>', unsafe_allow_html=True)
 
     # Download report
@@ -409,7 +409,7 @@ if predict_button:
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: #666; padding: 2rem;">
-    <p><strong>🐟 Fish Weight Predictor</strong> | Powered by Machine Learning</p>
+    <p><strong>🐟 Sea Cucumber Weight Predictor</strong> | Powered by Machine Learning</p>
     <p>Model: Linear Regression | Accuracy: ~52% R² | Features: 11 parameters</p>
 </div>
 """, unsafe_allow_html=True)
