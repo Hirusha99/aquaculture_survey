@@ -107,7 +107,7 @@ with col2:
         },
         color_continuous_scale='Viridis'
     )
-    st.plotly_chart(fig2, width="stretch")
+    st.plotly_chart(fig2, use_container_width=True)
 
 
 # Row 2: Density and Environmental Factors
