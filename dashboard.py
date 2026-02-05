@@ -94,7 +94,8 @@ with col1:
 
 with col2:
     fig2 = px.scatter(
-        fi
+        data_frame=df,
+        x='DURATIONMONTHS',
         y='PRODUCTION 1',
         size='Area (Ha 1)',
         color='AVG WEIGHT 1',
@@ -106,7 +107,8 @@ with col2:
         },
         color_continuous_scale='Viridis'
     )
-    st.plotly_chart(fig2, use_container_width=True)
+    st.plotly_chart(fig2, width="stretch")
+
 
 # Row 2: Density and Environmental Factors
 st.header("🌊 Environmental & Operational Factors")
