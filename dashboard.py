@@ -94,8 +94,7 @@ with col1:
 
 with col2:
     fig2 = px.scatter(
-        filtered_df,
-        x='DURATIONMONTHS',
+        fi
         y='PRODUCTION 1',
         size='Area (Ha 1)',
         color='AVG WEIGHT 1',
