@@ -174,7 +174,8 @@ if model is None or scaler is None:
     st.stop()
 
 # Main content - Two columns layout
-col1, col2 = st.columns([2, 1])
+# col1, col2 = st.columns([2, 1])
+col1 = st.columns(1)[0]
 
 with col1:
     st.header("📝 Enter Farm Parameters")
