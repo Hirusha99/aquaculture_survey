@@ -272,17 +272,17 @@ with col1:
                 help="Average water depth in feet"
             )
 
-with col2:
-    st.header("🎯 Quick Stats")
+# with col2:
+#     st.header("🎯 Quick Stats")
 
-    # Calculate derived metrics
-    total_fish = int(density * area)
-    expected_avg_weight = production / harvest_no if harvest_no > 0 else 0
+#     # Calculate derived metrics
+#     total_fish = int(density * area)
+#     expected_avg_weight = production / harvest_no if harvest_no > 0 else 0
 
-    st.metric("Total sea cucumber Stocked", f"{total_fish:,}")
-    st.metric("Expected Harvest", f"{harvest_no:,}")
-    st.metric("Survival Rate", f"{(harvest_no/total_fish*100):.1f}%" if total_fish > 0 else "N/A")
-    st.metric("Production Target", f"{production:,.0f} kg")
+#     st.metric("Total sea cucumber Stocked", f"{total_fish:,}")
+#     st.metric("Expected Harvest", f"{harvest_no:,}")
+#     st.metric("Survival Rate", f"{(harvest_no/total_fish*100):.1f}%" if total_fish > 0 else "N/A")
+#     st.metric("Production Target", f"{production:,.0f} kg")
 
 # Prediction section
 st.markdown("---")
